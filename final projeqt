@@ -186,3 +186,58 @@
 
 </body>
 </html>
+
+
+<header>
+
+    <h1>BURGERBOOMBS</h1>
+
+    <nav>
+        <a href="#">მთავარი</a>
+        <a href="#">მენიუ</a>
+        <a href="#">ჩვენ შესახებ</a>
+        <a href="#">კონტაქტი</a>
+    </nav>
+
+    
+
+    <div class="search-box">
+
+        <input type="text" id="searchInput" placeholder="მოძებნე ბურგერი">
+
+        <button onclick="searchBurger()">
+            ძებნა
+        </button>
+
+    </div>
+
+</header>
+
+<script>
+
+function searchBurger(){
+
+    let x = document.getElementById("searchInput").value.toLowerCase();
+
+    let cards = document.getElementsByClassName("burger-card");
+
+    for(let i = 0; i < cards.length; i++){
+
+        let h3 = cards[i].getElementsByTagName("h3")[0];
+
+        if(h3.innerText.toLowerCase().includes(x)){
+
+            cards[i].style.display = "inline-block";
+
+        }
+        else{
+
+            cards[i].style.display = "none";
+
+        }
+
+    }
+
+}
+
+</script>
